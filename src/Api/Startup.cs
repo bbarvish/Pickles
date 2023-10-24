@@ -18,14 +18,8 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container
     public void ConfigureServices(IServiceCollection services)
     {
-        var environmentName = Environment.GetEnvironmentVariable("Hosting:Environment");
-
-        var appSettingsConfig = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .AddJsonFile($"appsettings.{environmentName}.json", true)
-            .AddEnvironmentVariables()
-            .Build();
-
+        var appSettingsConfig = Infrastructure.DotNet.Configuration.AppConfigBuilder.Build();
+        
         var appSettings = new AppSettings();
         appSettingsConfig.Bind(appSettings);
 

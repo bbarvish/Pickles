@@ -1,29 +1,24 @@
-using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Pickles.Domain;
 using Pickles.Domain.Events;
 using Pickles.Domain.MessageHandlers;
 using Pickles.Domain.Messaging;
-using Pickles.Domain.Services;
 using Pickles.Infrastructure.Aws;
 
-namespace Pickles.Domain.Config;
+namespace Pickles.MessageHandler.Config;
 
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDomain(this IServiceCollection services, AppSettings appSettings)
     {
-        services.AddServices();
-        
-        services.AddAutoMapper(cfg => cfg.AllowNullCollections = true, Assembly.GetExecutingAssembly());
-
+        services.AddMessageHandler();
         services.AddInfrastructureAws(appSettings);
         return services;
     }
-
-    private static IServiceCollection AddServices(this IServiceCollection services)
+    
+    private static IServiceCollection AddMessageHandler(this IServiceCollection services)
     {
-        services.AddSingleton<UserService, UserService>();
-        services.AddSingleton<ValuesService, ValuesService>();
+        services.AddSingleton<IMessageHandler<UserCreated>, UserCreatedHandler>();
 
         return services;
     }
