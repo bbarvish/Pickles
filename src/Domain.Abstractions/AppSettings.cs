@@ -10,8 +10,8 @@ public class AppSettings
 
 public class NotificationOptions
 {
-    public bool WhenUserAdded { get; set; }
-    public bool WhenPlayerAdded { get; set; }
+    public bool WhenUserCreated { get; set; }
+    public bool WhenUserAddedToLeague { get; set; }
 }
 
 public class MessagingOptions
