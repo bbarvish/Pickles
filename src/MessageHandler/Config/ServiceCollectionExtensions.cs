@@ -4,6 +4,7 @@ using Pickles.Domain.Events;
 using Pickles.Domain.MessageHandlers;
 using Pickles.Domain.Messaging;
 using Pickles.Infrastructure.Aws;
+using Pickles.Infrastructure.Aws.Config;
 
 namespace Pickles.MessageHandler.Config;
 

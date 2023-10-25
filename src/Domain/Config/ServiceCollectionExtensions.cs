@@ -1,10 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using Pickles.Domain.Events;
-using Pickles.Domain.MessageHandlers;
-using Pickles.Domain.Messaging;
 using Pickles.Domain.Services;
-using Pickles.Infrastructure.Aws;
+using Pickles.Infrastructure.Aws.Config;
 
 namespace Pickles.Domain.Config;
 

@@ -13,7 +13,7 @@ public class UserService
     private readonly IMapper _mapper;
 
 
-    public UserService(IUserRepository userRepository, IMessagingService messagingService, IMapper mapper)
+    public UserService(IUserRepository userRepository, IMessagingService messagingService, IMapper mapper, IIdGenerator idGenerator)
     {
         _userRepository = userRepository;
         _messagingService = messagingService;

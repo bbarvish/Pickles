@@ -6,5 +6,5 @@ public interface IUserRepository
 {
     Task<User> Add(User user);
     Task<IEnumerable<User>> GetAll();
-    Task<User> Get(string emailAddress);
+    Task<User> Get(string id);
 }

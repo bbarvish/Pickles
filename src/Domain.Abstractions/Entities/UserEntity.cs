@@ -3,8 +3,10 @@ using EfficientDynamoDb.Attributes;
 namespace Pickles.Domain.Entities;
 
 [DynamoDbTable(TableNames.User)]
-public class UserEntity : DynamoDbEntity<UserEntity>
+public class UserEntity : KeyedDynamoDbEntity<UserEntity>
 {
+    [DynamoDbProperty(nameof(Id))]
+    public string Id { get; set; }
     [DynamoDbProperty(nameof(FirstName))]
     public string FirstName { get; set; }
     
@@ -18,25 +20,13 @@ public class UserEntity : DynamoDbEntity<UserEntity>
     public DateTime AddedOn { get; set; }
     public override UserEntity SetKeys()
     {
-        var emailParts = ParseEmail(Email);
-        pk = emailParts.domain;
-        sk = emailParts.userName;
+        pk = Id;
+        sk = "primary";
         return this;
     }
 
-    public static (string userName, string domain) ParseEmail(string email)
+    public static (string pk, string sk) GetKeys(string id)
     {
-        var emailParts = email.Split("@");
-        return (emailParts.First(), emailParts.Last());
+        return (id, "primary");
     }
-}
-
-public abstract class DynamoDbEntity<T>
-{
-    [DynamoDbProperty("pk", DynamoDbAttributeType.PartitionKey)]
-    public string pk { get; set; }
-
-    [DynamoDbProperty("sk", DynamoDbAttributeType.SortKey)]
-    public string sk { get; set; }
-    public abstract T SetKeys();
 }

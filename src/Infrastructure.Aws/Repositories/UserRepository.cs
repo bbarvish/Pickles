@@ -1,6 +1,8 @@
 using AutoMapper;
 using EfficientDynamoDb;
 using Pickles.Domain.Entities;
+using Pickles.Domain.Extensions;
+using Pickles.Domain.Infrastructure;
 using Pickles.Domain.Infrastructure.Repositories;
 using Pickles.Domain.Models;
 
@@ -11,14 +13,19 @@ public class UserRepository : IUserRepository
     private readonly IMapper _mapper;
     
     private readonly IDynamoDbContext _dbContext;
-    public UserRepository(IMapper mapper, IDynamoDbContext dbContext)
+    private readonly IIdGenerator _idGenerator;
+
+    public UserRepository(IMapper mapper, IDynamoDbContext dbContext, IIdGenerator idGenerator)
     {
         _mapper = mapper;
         _dbContext = dbContext;
+        _idGenerator = idGenerator;
     }
     public async Task<User> Add(User user)
     {
         var entity = _mapper.Map<UserEntity>(user);
+        
+        entity.Id = _idGenerator.GenerateUniqueString();
         entity.AddedOn = DateTime.UtcNow;
         entity.SetKeys();
 
@@ -41,10 +48,10 @@ public class UserRepository : IUserRepository
         return result;
     }
     
-    public async Task<User> Get(string emailAddress)
+    public async Task<User> Get(string id)
     {
-        var emailParts = UserEntity.ParseEmail(emailAddress);
-        var item = await _dbContext.GetItemAsync<UserEntity>(emailParts.domain, emailParts.userName);
+        var keys = UserEntity.GetKeys(id);
+        var item = await _dbContext.GetItemAsync<UserEntity>(keys.pk, keys.sk);
         return item is null ? new User() : _mapper.Map<User>(item);
     }
     
