@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using EfficientDynamoDb.Attributes;
 
 namespace Pickles.Infrastructure.Aws.Entities;
@@ -14,7 +15,7 @@ public class EventEntity : KeyedDynamoDbEntity<EventEntity>
     [DynamoDbProperty(nameof(Data))]
     public string Data { get; set; }
     [DynamoDbProperty(nameof(OccurredOn))]
-    public DateTimeOffset OccurredOn { get; set; }
+    public DateTime OccurredOn { get; set; }
     public override EventEntity SetKeys()
     {
         pk = AggregateId;

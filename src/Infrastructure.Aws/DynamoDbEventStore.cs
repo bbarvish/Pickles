@@ -29,7 +29,7 @@ public class DynamoDbEventStore : IEventStore
             AggregateId = aggregateId,
             EventType = @event.GetType().FullName,
             Data = @event.ToJson(),
-            OccurredOn = DateTimeOffset.UtcNow,
+            OccurredOn = DateTime.UtcNow,
             SequenceNumber = sequenceNumber
         }.SetKeys();
         
