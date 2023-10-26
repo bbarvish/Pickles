@@ -1,4 +1,4 @@
-namespace Pickles.Domain;
+namespace Pickles.Infrastructure.Aws;
 
 public static class TableNames
 {

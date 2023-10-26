@@ -1,9 +1,9 @@
 using AutoMapper;
 using EfficientDynamoDb;
-using Pickles.Domain.Entities;
 using Pickles.Domain.Infrastructure;
 using Pickles.Domain.Infrastructure.Repositories;
 using Pickles.Domain.Models;
+using Pickles.Infrastructure.Aws.Entities;
 
 namespace Pickles.Infrastructure.Aws.Repositories;
 

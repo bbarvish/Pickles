@@ -1,7 +1,7 @@
 using AutoMapper;
-using Pickles.Domain.Entities;
 using Pickles.Domain.Events;
 using Pickles.Domain.Models;
+using Pickles.Infrastructure.Aws.Entities;
 
 namespace Pickles.Domain.Config;
 

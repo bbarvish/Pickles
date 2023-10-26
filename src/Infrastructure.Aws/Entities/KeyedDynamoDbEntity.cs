@@ -1,6 +1,6 @@
 using EfficientDynamoDb.Attributes;
 
-namespace Pickles.Domain.Entities;
+namespace Pickles.Infrastructure.Aws.Entities;
 
 public abstract class KeyedDynamoDbEntity<T>
 {

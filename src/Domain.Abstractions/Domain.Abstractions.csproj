@@ -13,10 +13,6 @@
         <ProjectReference Include="..\Domain.Abstractions.Contracts\Domain.Abstractions.Contracts.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="EfficientDynamoDb" Version="0.9.14" />
-    </ItemGroup>
-
 
 
 </Project>

@@ -1,6 +1,7 @@
 using EfficientDynamoDb.Attributes;
+using Pickles.Domain;
 
-namespace Pickles.Domain.Entities;
+namespace Pickles.Infrastructure.Aws.Entities;
 
 [DynamoDbTable(TableNames.User)]
 public class UserEntity : KeyedDynamoDbEntity<UserEntity>
