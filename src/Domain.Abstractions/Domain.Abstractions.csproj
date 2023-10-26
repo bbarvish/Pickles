@@ -4,15 +4,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>Pickles.Domain.Abstractions</AssemblyName>
         <RootNamespace>Pickles.Domain</RootNamespace>
-        <LangVersion>10</LangVersion>
     </PropertyGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Domain.Abstractions.Contracts\Domain.Abstractions.Contracts.csproj" />
-    </ItemGroup>
-
-
 
 </Project>

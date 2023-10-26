@@ -2,7 +2,6 @@ using Amazon.CloudWatchEvents.Model;
 using MoreLinq.Extensions;
 using Pickles.Domain;
 using Pickles.Domain.Events;
-using Pickles.Domain.Extensions;
 using Pickles.Domain.Infrastructure;
 
 namespace Pickles.Infrastructure.Aws;
