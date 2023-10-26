@@ -1,8 +1,9 @@
-﻿using Pickles.Domain.Models;
+﻿using Pickles.Domain.Messaging;
+using Pickles.Domain.Models;
 
 namespace Pickles.Domain.Events;
 
-public class UserCreated : User
+public class UserCreated : User, IEvent
 {
     
 }

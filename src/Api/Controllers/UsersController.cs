@@ -1,6 +1,9 @@
+using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Pickles.Api.Extensions;
+using Pickles.Domain.Events;
+using Pickles.Domain.Infrastructure;
 using Pickles.Domain.Models;
 using Pickles.Domain.Services;
 
@@ -9,12 +12,16 @@ namespace Pickles.Api.Controllers;
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
 {
+    private readonly IEventStore _eventStore;
+    private readonly IMapper _mapper;
     private readonly UserService _userService;
     private readonly IValidator<User> _validator;
 
 
-    public UsersController(UserService userService, IValidator<User> validator)
+    public UsersController(IEventStore eventStore, IMapper mapper, UserService userService, IValidator<User> validator)
     {
+        _eventStore = eventStore;
+        _mapper = mapper;
         _userService = userService;
         _validator = validator;
     }
@@ -44,6 +51,11 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<User> >Add([FromBody]User user)
     {
+        //HACK: to test it out
+        var id = Guid.NewGuid().ToString("N");
+        var e = _mapper.Map<UserCreated>(user);
+        await _eventStore.Save(e, id, user.GetType().FullName, null);
+        
         var validationResult = await _validator.ValidateAsync(user);
 
         if (validationResult.IsValid)
