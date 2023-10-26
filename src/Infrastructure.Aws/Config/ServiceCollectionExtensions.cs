@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
         services.AddDynamoDb(appSettings);
 
         services.AddSingleton<ClientFactory, ClientFactory>();
+        services.AddSingleton<IEventStore, DynamoDbEventStore>();
 
         services.AddSingleton<IMessagingService, MessagingService>();
         services.AddAutoMapper(cfg => cfg.AddProfile(new AwsAutoMapperConfig()));
