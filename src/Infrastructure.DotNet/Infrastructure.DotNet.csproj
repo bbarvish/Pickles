@@ -25,12 +25,4 @@
 
 
 
-
-
-    <ItemGroup>
-      <Folder Include="Config\" />
-    </ItemGroup>
-
-
-
 </Project>

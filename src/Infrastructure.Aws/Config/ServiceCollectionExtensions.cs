@@ -7,7 +7,6 @@ using Pickles.Domain;
 using Pickles.Domain.Infrastructure;
 using Pickles.Domain.Infrastructure.Repositories;
 using Pickles.Infrastructure.Aws.Repositories;
-using Pickles.Infrastructure.DotNet;
 
 namespace Pickles.Infrastructure.Aws.Config;
 
@@ -21,7 +20,6 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ClientFactory, ClientFactory>();
 
         services.AddSingleton<IMessagingService, MessagingService>();
-        services.AddSingleton<IIdGenerator, IdGenerator>();
         return services;
     }
 

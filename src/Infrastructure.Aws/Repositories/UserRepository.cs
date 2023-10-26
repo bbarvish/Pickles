@@ -1,7 +1,6 @@
 using AutoMapper;
 using EfficientDynamoDb;
 using Pickles.Domain.Entities;
-using Pickles.Domain.Extensions;
 using Pickles.Domain.Infrastructure;
 using Pickles.Domain.Infrastructure.Repositories;
 using Pickles.Domain.Models;
