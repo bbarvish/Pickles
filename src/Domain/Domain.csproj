@@ -18,9 +18,6 @@
 
 
     <ItemGroup>
-      <ProjectReference Include="..\Domain.Abstractions.Contracts\Domain.Abstractions.Contracts.csproj" />
       <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
-      <ProjectReference Include="..\Infrastructure.Aws\Infrastructure.Aws.csproj" />
-      <ProjectReference Include="..\Infrastructure.DotNet\Infrastructure.DotNet.csproj" />
     </ItemGroup>
 </Project>

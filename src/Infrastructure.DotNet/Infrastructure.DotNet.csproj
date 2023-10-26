@@ -19,10 +19,4 @@
 
 
 
-    <ItemGroup>
-      <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
-    </ItemGroup>
-
-
-
 </Project>

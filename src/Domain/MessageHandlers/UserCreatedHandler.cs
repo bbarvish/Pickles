@@ -1,6 +1,5 @@
 using Pickles.Domain.Events;
 using Pickles.Domain.Messaging;
-using Pickles.Infrastructure.DotNet.Extensions;
 
 namespace Pickles.Domain.MessageHandlers;
 

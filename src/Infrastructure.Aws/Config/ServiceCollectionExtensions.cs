@@ -20,6 +20,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<ClientFactory, ClientFactory>();
 
         services.AddSingleton<IMessagingService, MessagingService>();
+        services.AddAutoMapper(cfg => cfg.AddProfile(new AwsAutoMapperConfig()));
         return services;
     }
 

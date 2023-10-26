@@ -2,7 +2,7 @@
 using Pickles.Api.Validators;
 using Pickles.Domain;
 using Pickles.Domain.Config;
-using Pickles.Domain.Extensions;
+using Pickles.Infrastructure.Aws.Config;
 
 namespace Pickles.Api;
 
@@ -27,7 +27,10 @@ public class Startup
         services.AddSingleton(appSettings);
 
         services.AddControllers();
-        services.AddDomain(appSettings);
+        services
+            .AddDomain()
+            .AddInfrastructureAws(appSettings);
+        
         services.AddValidatorsFromAssemblyContaining<UserValidator>();
     }
 

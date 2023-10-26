@@ -14,15 +14,13 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Amazon.Lambda.CloudWatchEvents" Version="4.3.0" />
-        <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0"/>
-        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.1"/>
+        <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
+        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.1" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Domain.Abstractions.Contracts\Domain.Abstractions.Contracts.csproj" />
-      <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
       <ProjectReference Include="..\Infrastructure.Aws\Infrastructure.Aws.csproj" />
       <ProjectReference Include="..\Infrastructure.DotNet\Infrastructure.DotNet.csproj" />

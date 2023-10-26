@@ -1,6 +1,7 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
-namespace Pickles.Infrastructure.DotNet.Extensions;
+// ReSharper disable once CheckNamespace
+namespace System;
 
 public static class JsonExtensions
 {

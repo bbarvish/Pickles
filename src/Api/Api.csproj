@@ -23,5 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure.Aws\Infrastructure.Aws.csproj" />
+    <ProjectReference Include="..\Infrastructure.DotNet\Infrastructure.DotNet.csproj" />
   </ItemGroup>
 </Project>
