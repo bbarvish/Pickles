@@ -81,4 +81,22 @@ Finally, the match will be scored, publish a **MatchScored** event maybe (Match 
 The **MatchScored** event will also be used to update the league ranking.
 
 ### Match Domain Object
-LeagueId
+```text
+League Id
+Match Id
+Match Type (two games or best of three)
+Schedule Date and Time
+Location
+Player List
+Initiating Player
+Completed On
+Reported Score (List of Scored Games)
+- Game number
+- Team list (expecting two items) (list of two Players and points scored)
+Match Outcome (List Player Outcomes)
+- PlayerId
+- Player Rank at time of match
+- Number of games won
+- Total points scored
+```
+

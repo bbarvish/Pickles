@@ -8,3 +8,20 @@ public class User
     public string Email { get; set; }
     public string Phone { get; set; }
 }
+
+public class Club
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+}
+
+public class Player
+{
+    public string Id { get; set; }
+}
+
+public class League
+{
+    public string Id { get; set; }
+    public string Style { get; set; }
+}

@@ -10,7 +10,7 @@
 *.sln.docstates
 
 #aws deployment environment inspecific files
-aws-lambda-tools-defaults.json
+# aws-lambda-tools-defaults.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
