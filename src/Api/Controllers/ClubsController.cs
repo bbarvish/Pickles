@@ -31,6 +31,14 @@ public class ClubsController : ControllerBase
     [HttpPost("{clubId}/player")]
     public async Task<ActionResult<Player> >AddPlayer(string clubId, [FromBody]Player player)
     {
+        //NOTE:  Storing the many to many Player <-> Club relationship
+        //  Can do it in a Dynamo table  with both IDs as pk, sk
+        //  player-123, club-456
+        // and also the inversion
+        //  club-456, player-123
+        // Can also be done with Dynamo's index feature
+        // Also, a Club Aggregate can store a list of player
+        // likewise a Player Aggregate can store a list of clubs
         Console.WriteLine($"Adding player: {player.ToJson()} to club {clubId}");
         return player;
     }

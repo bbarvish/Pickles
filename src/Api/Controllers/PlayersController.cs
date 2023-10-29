@@ -21,6 +21,15 @@ public class PlayersController : ControllerBase
         };
     }
     
+    [HttpGet("{id}/clubs")]
+    public async Task<ActionResult<Club>> GetClubsForPlayer(string id)
+    {
+        //All clubs this player belongs to 
+        return new Club()
+        {
+        };
+    }
+    
     [HttpPost()]
     public async Task<ActionResult<Player> >Add([FromBody]Player player)
     {
