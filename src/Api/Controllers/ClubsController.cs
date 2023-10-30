@@ -29,7 +29,7 @@ public class ClubsController : ControllerBase
     }
     
     [HttpPost("{clubId}/player")]
-    public async Task<ActionResult<Player> >AddPlayer(string clubId, [FromBody]Player player)
+    public async Task<ActionResult<Player>> AddPlayer(string clubId, [FromBody]Player player)
     {
         //NOTE:  Storing the many to many Player <-> Club relationship
         //  Can do it in a Dynamo table  with both IDs as pk, sk
@@ -41,5 +41,12 @@ public class ClubsController : ControllerBase
         // likewise a Player Aggregate can store a list of clubs
         Console.WriteLine($"Adding player: {player.ToJson()} to club {clubId}");
         return player;
+    }
+    
+    [HttpDelete("{clubId}/{playerId}")]
+    public async Task<ActionResult> RemovePlayer(string clubId, string playerId)
+    {
+        Console.WriteLine($"Removing player: {playerId} from club {clubId}");
+        return new OkResult();
     }
 }

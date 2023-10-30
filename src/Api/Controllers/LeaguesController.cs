@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Pickles.Domain.Models;
+using Task = Amazon.Lambda.CloudWatchEvents.ECSEvents.Task;
 
 namespace Pickles.Api.Controllers;
 
@@ -43,5 +44,17 @@ public class LeaguesController : ControllerBase
     {
         //Add match to league
         return item;
+    }
+
+    [HttpGet("{id}/standings")]
+    public async Task<LeagueStandings> GetAllStandings(string leagueId)
+    {
+        return new LeagueStandings();
+    }
+    
+    [HttpGet("{id}/standings/{asOfDate}")]
+    public async Task<LeagueStandings> GetAllStandings(string leagueId, DateTime asOfDate)
+    {
+        return new LeagueStandings();
     }
 }
