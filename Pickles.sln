@@ -24,6 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Api\Api.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Abstractions", "src\Domain.Abstractions\Domain.Abstractions.csproj", "{957352F4-7CC1-43DF-8262-5F4AF8B3865B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{B90B02B6-02B4-4B9C-8C38-ABAAB4FCD833}"
+	ProjectSection(SolutionItems) = preProject
+		docs\ClassModel.png = docs\ClassModel.png
+		docs\Scenarios.md = docs\Scenarios.md
+		docs\Objects.md = docs\Objects.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +44,7 @@ Global
 		{A95FBB83-1FBB-40FE-A814-21B1343B7229} = {69639A04-D7C3-4937-85A9-15056F6132BA}
 		{35A0470B-B7C9-4E53-A2B6-002B079067A8} = {69639A04-D7C3-4937-85A9-15056F6132BA}
 		{957352F4-7CC1-43DF-8262-5F4AF8B3865B} = {69639A04-D7C3-4937-85A9-15056F6132BA}
+		{B90B02B6-02B4-4B9C-8C38-ABAAB4FCD833} = {8232BD38-8E82-4B9D-BB3B-43249F902F67}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{03D481F8-DA50-40A5-84F5-C999AD21115A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
